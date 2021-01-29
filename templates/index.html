@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container-fluid"style="padding:0px; background-color:#d3d3d38a;">
+    <div class="container-fluid" style="background-color:#2d96fa; padding:10px;  ">
+        <h1>Courbe hospitalisation, réanimation et deces total</h1>
+        <div class="espace"></div>
+        <figure class="highcharts-figure">
+            <div id="france_total"></div>
+         
+          </figure>
+          
+            
+    </div>
+    <div class="espace"></div>
+</div>
+
+<div class="container-fluid"style="padding:0px; background-color:#d3d3d38a;">
+    <div class="container-fluid" style="background-color:#2d96fa; padding:10px;  ">
+        <h1>Courbe nouveau cas Covid 19</h1>
+        <div class="espace"></div>
+        <figure class="highcharts-figure">
+            <div id="france_nouveau"></div>
+         
+          </figure>
+          
+            
+    </div>
+    <div class="espace"></div>
+</div>
+
+
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/custom/european-union.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/fr/fr-all.js"></script>
+
+
+
+<div class="container-fluid"style="padding:0px; background-color:#d3d3d38a;">
+    <div class="container-fluid" style="background-color:#2d96fa; padding:10px;  ">
+        <div class="espace"></div>
+        <div class="row">
+            <div class="col">  
+                <h1>Carte Covid 19 Europe</h1>
+                <figure class="highcharts-figure">
+            
+                    <div id="contenant" style="height: 650px;"></div>
+                      </figure>
+            </div>
+            <div class="col">
+                <h1>Nombre de décès total en france par région</h1>
+                <div id="france_age" style="height: 650px;"></div>
+             
+            </div>
+        
+        
+        
+        
+          
+            
+    </div>
+    <div class="espace"></div>
+</div>
+  
+
+
+<script>
+    var data = {{data|safe}};
+    var value = {{ value|safe }}
+    var value_nouveau={{value_nouveau|safe}}
+    var dataMapFr = {{ dataMapFr|safe }}
+  
+</script>
+
+
+ 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+
+    
+<script type = "text/javascript" src="../static/main.js"></script>
+
+
+        
+
+
+
+
+{% endblock %}
+
+
+
+   
+   
